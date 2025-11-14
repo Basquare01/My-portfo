@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bilal Hassan Sulaiman | Projects</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    body {
+      background: radial-gradient(circle at top left, #0f172a, #020617);
+      color: #f8f8ff;
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* Neon text glow */
+    .neon-text {
+      text-shadow: 0 0 10px #06b6d4, 0 0 20px #3b82f6, 0 0 30px #2563eb;
+    }
+
+    /* Neon card border and glow */
+    .neon-card {
+      border: 1px solid rgba(6, 182, 212, 0.6);
+      box-shadow: 0 0 10px rgba(6, 182, 212, 0.4), 0 0 20px rgba(6, 182, 212, 0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .neon-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #06b6d4, 0 0 40px #3b82f6, 0 0 60px #2563eb;
+    }
+
+    /* Neon button */
+    .neon-btn {
+      border: 1px solid #06b6d4;
+      padding: 10px 20px;
+      color: #06b6d4;
+      font-weight: bold;
+      transition: all 0.3s ease-in-out;
+    }
+    .neon-btn:hover {
+      background: #06b6d4;
+      color: #020617;
+      box-shadow: 0 0 25px #06b6d4, 0 0 50px #3b82f6;
+    }
+
+    /* Mobile menu */
+    #mobileMenu {
+      display: none;
+    }
+
+    .menu-icon div {
+      width: 25px;
+      height: 3px;
+      background: #06b6d4;
+      margin: 4px 0;
+      transition: all 0.3s;
+    }
+
+    /* Modal styles */
+    #projectModal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 50;
+    }
+    #projectModal .modal-content {
+      background: #0f172a;
+      border: 1px solid rgba(6,182,212,0.6);
+      box-shadow: 0 0 20px #06b6d4, 0 0 40px #3b82f6;
+      border-radius: 2rem;
+      max-width: 700px;
+      width: 90%;
+      padding: 2rem;
+      text-align: center;
+    }
+    #projectModal .close-modal {
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+      font-size: 2rem;
+      cursor: pointer;
+      color: #06b6d4;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="flex justify-between items-center px-6 py-4 glow-border sticky top-0 z-50 bg-black bg-opacity-30">
+    <h1 class="text-2xl font-bold neon-text">Bilal<span class="text-cyan-400">.</span></h1>
+    <ul class="hidden md:flex space-x-8 text-lg">
+      <li><a href="index.html" class="hover:text-cyan-400">Home</a></li>
+      <li><a href="about.html" class="hover:text-cyan-400">About</a></li>
+      <li><a href="projects.html" class="hover:text-cyan-400">Projects</a></li>
+      <li><a href="contact.html" class="hover:text-cyan-400">Contact</a></li>
+    </ul>
+    <div class="md:hidden menu-icon cursor-pointer" id="menuToggle">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="bg-black bg-opacity-50 text-center py-4">
+    <a href="index.html" class="block py-2 hover:text-cyan-400">Home</a>
+    <a href="about.html" class="block py-2 hover:text-cyan-400">About</a>
+    <a href="projects.html" class="block py-2 hover:text-cyan-400">Projects</a>
+    <a href="contact.html" class="block py-2 hover:text-cyan-400">Contact</a>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="flex flex-col justify-center items-center text-center h-64 md:h-72 px-6 mb-12" data-aos="fade-up">
+    <h2 class="text-4xl md:text-5xl font-bold neon-text mb-4">My Projects</h2>
+    <p class="text-gray-300 max-w-2xl text-lg md:text-xl">
+      A showcase of UI/UX designs and frontend projects built with modern technologies.
+    </p>
+  </section>
+
+  <!-- Projects Grid -->
+  <section class="px-6 md:px-12 mb-20">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      
+      <!-- Project 1 -->
+      <div class="neon-card p-6 rounded-xl" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="text-xl font-semibold neon-text mb-2">Modern Dashboard UI</h3>
+        <p class="text-gray-300 text-sm mb-4">Figma interactive dashboard prototype focusing on usability and visual hierarchy.</p>
+        <button class="neon-btn rounded-lg view-project-btn" data-project="dashboard">View Project</button>
+      </div>
+      
+      <!-- Project 2 -->
+      <div class="neon-card p-6 rounded-xl" data-aos="fade-up" data-aos-delay="150">
+        <h3 class="text-xl font-semibold neon-text mb-2">E-commerce App Concept</h3>
+        <p class="text-gray-300 text-sm mb-4">UI/UX concept for mobile e-commerce app with seamless navigation and modern design.</p>
+        <button class="neon-btn rounded-lg view-project-btn" data-project="ecommerce">View Project</button>
+      </div>
+      
+      <!-- Project 3 -->
+      <div class="neon-card p-6 rounded-xl" data-aos="fade-up" data-aos-delay="200">
+        <h3 class="text-xl font-semibold neon-text mb-2">Student Auction System UI</h3>
+        <p class="text-gray-300 text-sm mb-4">UI design for student auction system — clean interface, real-time bidding flow.</p>
+        <button class="neon-btn rounded-lg view-project-btn" data-project="auction">View Project</button>
+      </div>
+      
+      <!-- Project 4 -->
+      <div class="neon-card p-6 rounded-xl" data-aos="fade-up" data-aos-delay="250">
+        <h3 class="text-xl font-semibold neon-text mb-2">Portfolio Website</h3>
+        <p class="text-gray-300 text-sm mb-4">Responsive portfolio website with neon-glow theme built using Tailwind and JS.</p>
+        <button class="neon-btn rounded-lg view-project-btn" data-project="portfolio">View Project</button>
+      </div>
+      
+      <!-- Project 5 -->
+      <div class="neon-card p-6 rounded-xl" data-aos="fade-up" data-aos-delay="300">
+        <h3 class="text-xl font-semibold neon-text mb-2">Interactive To-Do App</h3>
+        <p class="text-gray-300 text-sm mb-4">LocalStorage JS app for task management with smooth interactions and clean UI.</p>
+        <button class="neon-btn rounded-lg view-project-btn" data-project="todo">View Project</button>
+      </div>
+      
+      <!-- Project 6 -->
+      <div class="neon-card p-6 rounded-xl" data-aos="fade-up" data-aos-delay="350">
+        <h3 class="text-xl font-semibold neon-text mb-2">Mini Dashboard / Calculator</h3>
+        <p class="text-gray-300 text-sm mb-4">Frontend project showcasing interactive calculator and small dashboard components.</p>
+        <button class="neon-btn rounded-lg view-project-btn" data-project="mini">View Project</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div id="projectModal">
+    <div class="modal-content relative">
+      <span class="close-modal">&times;</span>
+      <h3 id="modalTitle" class="text-3xl font-bold neon-text mb-4">Project Title</h3>
+      <p id="modalDesc" class="text-gray-300 mb-6">Project description goes here...</p>
+      <a id="modalLink" href="#" target="_blank" class="neon-btn rounded-lg">Open Project / Figma</a>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true });
+
+    // Mobile menu toggle
+    const toggle = document.getElementById('menuToggle');
+    const menu = document.getElementById('mobileMenu');
+    toggle.addEventListener('click', () => {
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // Project modal
+    const projects = {
+      dashboard: {
+        title: 'Modern Dashboard UI',
+        desc: 'Interactive dashboard UI built in Figma, showcasing charts, analytics, and clean layout.',
+        link: '#'
+      },
+      ecommerce: {
+        title: 'E-commerce App Concept',
+        desc: 'Mobile e-commerce app UI/UX design concept focusing on usability and visual flow.',
+        link: '#'
+      },
+      auction: {
+        title: 'Student Auction System UI',
+        desc: 'UI prototype for auction system with real-time bidding and winner display.',
+        link: '#'
+      },
+      portfolio: {
+        title: 'Portfolio Website',
+        desc: 'Responsive portfolio website built using Tailwind, HTML, CSS, and JS with neon-glow theme.',
+        link: '#'
+      },
+      todo: {
+        title: 'Interactive To-Do App',
+        desc: 'LocalStorage JS app for task management with smooth UI interactions.',
+        link: '#'
+      },
+      mini: {
+        title: 'Mini Dashboard / Calculator',
+        desc: 'Interactive calculator and dashboard components demonstrating frontend skills.',
+        link: '#'
+      }
+    };
+
+    const modal = document.getElementById('projectModal');
+    const closeModal = document.querySelector('.close-modal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDesc = document.getElementById('modalDesc');
+    const modalLink = document.getElementById('modalLink');
+
+    document.querySelectorAll('.view-project-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const key = btn.dataset.project;
+        modalTitle.textContent = projects[key].title;
+        modalDesc.textContent = projects[key].desc;
+        modalLink.href = projects[key].link;
+        modal.style.display = 'flex';
+      });
+    });
+
+    closeModal.addEventListener('click', () => modal.style.display = 'none');
+    window.addEventListener('click', (e) => { if(e.target === modal) modal.style.display = 'none'; });
+  </script>
+
+</body>
+</html>
