@@ -14,13 +14,11 @@
     body {
       background: radial-gradient(circle at top left, #0f172a, #020617);
       color: #e2e8f0;
-      overflow-x: hidden; /* FIXED horizontal scroll */
+      overflow-x: hidden;
     }
 
     .neon-text {
-      text-shadow: 0 0 10px #06b6d4, 
-                   0 0 20px #3b82f6, 
-                   0 0 30px #2563eb;
+      text-shadow: 0 0 10px #06b6d4, 0 0 20px #3b82f6, 0 0 30px #2563eb;
     }
 
     .glow-border {
@@ -44,7 +42,6 @@
       color: #06b6d4;
     }
 
-    /* Mobile Menu */
     #mobileMenu {
       display: none;
     }
@@ -56,7 +53,6 @@
       margin: 5px 0;
       transition: 0.4s;
     }
-
   </style>
 </head>
 
@@ -66,7 +62,6 @@
   <nav class="flex justify-between items-center py-6 px-8 md:px-20 text-gray-300 relative">
     <h1 class="text-2xl font-bold neon-text">Bilal<span class="text-cyan-400">.</span></h1>
 
-    <!-- Desktop Menu -->
     <ul class="hidden md:flex gap-8 text-sm">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
@@ -74,7 +69,6 @@
       <li><a href="contact.html">Contact</a></li>
     </ul>
 
-    <!-- Mobile Menu Toggle -->
     <div id="menuToggle" class="md:hidden cursor-pointer menu-icon">
       <div></div>
       <div></div>
@@ -82,8 +76,8 @@
     </div>
   </nav>
 
-  <!-- MOBILE DROPDOWN MENU -->
-  <div id="mobileMenu" class="md:hidden bg-black bg-opacity-50 text-center py-4 w-full absolute top-20 left-0">
+  <!-- MOBILE MENU -->
+  <div id="mobileMenu" class="hidden bg-black bg-opacity-50 text-center py-4 w-full absolute top-20 left-0">
     <a href="index.html" class="block py-2 hover:text-cyan-400">Home</a>
     <a href="about.html" class="block py-2 hover:text-cyan-400">About</a>
     <a href="projects.html" class="block py-2 hover:text-cyan-400">Projects</a>
@@ -100,14 +94,31 @@
     </p>
 
     <div class="flex gap-6 flex-wrap justify-center">
+
+      <!-- My Work -->
       <a href="projects.html"
-         class="hero-btn glow-border px-6 py-3 rounded-lg text-cyan-400 font-semibold">
+        class="hero-btn glow-border px-6 py-3 rounded-lg text-cyan-400 font-semibold">
         View My Work
       </a>
 
+      <!-- Contact -->
       <a href="contact.html"
-         class="hero-btn glow-border px-6 py-3 rounded-lg text-purple-400 font-semibold">
+        class="hero-btn glow-border px-6 py-3 rounded-lg text-purple-400 font-semibold">
         Contact Me
+      </a>
+
+      <!-- Download CV -->
+      <a href="cv.pdf"
+        download
+        class="hero-btn glow-border px-6 py-3 rounded-lg text-green-400 font-semibold">
+        Download CV
+      </a>
+
+      <!-- View CV -->
+      <a href="cv.pdf"
+        target="_blank"
+        class="hero-btn glow-border px-6 py-3 rounded-lg text-yellow-400 font-semibold">
+        View CV
       </a>
     </div>
   </section>
@@ -117,13 +128,13 @@
     © 2025 Bilal Hassan | Designed & Built by Bilal
   </footer>
 
-  <!-- JAVASCRIPT -->
+  <!-- JS -->
   <script>
     const toggle = document.getElementById('menuToggle');
     const menu = document.getElementById('mobileMenu');
 
     toggle.addEventListener('click', () => {
-      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        menu.classList.toggle("hidden");
     });
   </script>
 
